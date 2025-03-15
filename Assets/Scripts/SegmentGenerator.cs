@@ -7,6 +7,7 @@ public class SegmentGenerator : MonoBehaviour
     [SerializeField] int zPos = 50;
     [SerializeField] bool creatingSegment = false;
     [SerializeField] int segmentNum;
+    GameObject toBeDeletedObj ;
     void Update()
     {
         if(creatingSegment == false)
@@ -19,12 +20,13 @@ public class SegmentGenerator : MonoBehaviour
     IEnumerator SegmentGen()
     {
         segmentNum = Random.Range(0,3);
-        Instantiate(segment[segmentNum], new Vector3(0,0, zPos), Quaternion.identity);
+        toBeDeletedObj = Instantiate(segment[segmentNum], new Vector3(0,0, zPos), Quaternion.identity);
         zPos += 50;
         yield return new WaitForSeconds(3);
         creatingSegment = false;
-        
+        Destroy(toBeDeletedObj,20);
     }
+    
 
    
 }
