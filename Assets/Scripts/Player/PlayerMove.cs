@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     public float moveSpeed = 3;
     public float leftrightSpeed = 4;
@@ -29,5 +29,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
             }
         }
         
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("carpisma");
     }
 }

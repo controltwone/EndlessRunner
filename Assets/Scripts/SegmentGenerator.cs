@@ -24,7 +24,7 @@ public class SegmentGenerator : MonoBehaviour
         zPos += 50;
         yield return new WaitForSeconds(3);
         creatingSegment = false;
-        Destroy(toBeDeletedObj,25);
+        // Destroy(toBeDeletedObj,25);
     }
     
 
