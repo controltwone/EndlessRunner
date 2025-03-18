@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionDetect : MonoBehaviour
 {
@@ -19,8 +20,10 @@ public class CollisionDetect : MonoBehaviour
         playerAnim.GetComponent<Animator>().Play("Stumble Backwards");
         collisionFX.Play();
         mainCam.GetComponent<Animator>().Play("CameraFalling");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         fadeOut.SetActive(true);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(0);
 
     }
 }
