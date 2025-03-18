@@ -32,6 +32,7 @@ public class PlayerMove : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("carpisma");
+       Debug.Log("Çarpışma: " + collision.gameObject.name);
+        
     }
 }
